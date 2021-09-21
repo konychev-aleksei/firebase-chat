@@ -17,6 +17,7 @@ const Messages = ({ chat, name, scrollRef }) => {
 
           return(
             <Message
+              key={ index }
               newDate={ newDate }
               className={ `message-quote${ sender === name ? ' sent' : '' }` }
               text={ text }
