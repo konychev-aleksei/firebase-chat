@@ -19,7 +19,7 @@ const ChatButton = ({ userName, text, profileImage, unread, email, setShowChat }
       <img src={ profileImage } alt="" />
       <div className="content">
         <b>{ userName }</b>
-        <p>{ text.substring(0, 30) + '...' }</p>
+        <p>{ text.lengh > 30 ? text.substring(0, 30) + '...' : text }</p>
       </div>
       <div className="unread">
         {
