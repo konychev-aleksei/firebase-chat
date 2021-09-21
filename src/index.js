@@ -44,10 +44,12 @@ const App = () => {
   useEffect(() => {
     const createAccount = async () => {
       if (user) {
+        user.getIdToken()
+          .then((idToken) => window.sessionStorage.setItem("auth", idToken))
+          .catch((e) => console.error(e))
+
         await api.createAccount(user?.displayName, user?.email?.replace('@gmail.com', ''), user?.photoURL)
       }
-      //await api.createAccount('Party Favor', 'partyfavortest', url)
-      //await api.sendMessage('Aleksei 112358', url, 'konychevaleksei', 'Party Favor', url, 'partyfavortest', { text: 'AAAAAAAAAAAA', attachment: '' })
     }
 
     createAccount()
@@ -65,7 +67,7 @@ const App = () => {
     <AppContext.Provider value={ value }>
       <Provider store={ store }>
         {
-          user ?
+          user || window.sessionStorage.getItem("auth") ?
           <Messenger />
           :
           <SignIn />
