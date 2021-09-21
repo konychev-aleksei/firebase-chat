@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { REMOVE_CHAT, HIDE, RECIEVED, VALUE } from '../config/index'
 
 
-const Chats = () => {
+const Chats = ({ innerWidth }) => {
   const dispatch = useDispatch()
   const currentChat = useSelector(state => state.chat)
 
@@ -94,6 +94,7 @@ const Chats = () => {
             chats.map(({ userName, text, profileImage, unread, email }) => {
               return(
                 <ChatButton
+                  innerWidth={ innerWidth }
                   email={ email }
                   userName={ userName }
                   text={ text }
