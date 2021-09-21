@@ -2,6 +2,7 @@
   outline: none;
   border: none;
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
