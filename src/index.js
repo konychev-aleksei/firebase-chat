@@ -83,7 +83,7 @@ const Messenger = () => {
     <div className="main">
       {
         innerWidth >= 800 || !showChat ?
-        <Chats/>
+        <Chats innerWidth={ innerWidth } />
         : null
       }
       {
@@ -91,7 +91,7 @@ const Messenger = () => {
         <Chat/>
         : null
       }
-    </div>    
+    </div>
   )
 }
 
