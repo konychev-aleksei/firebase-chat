@@ -1,0 +1,297 @@
+* {
+  font-family: -apple-system, sans-serif;
+}
+
+
+.main {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+.chats {
+  display: flex;
+  flex-basis: 450px;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.navigation {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+.navigation > button {
+  flex: 1;
+}
+
+.navigation b {
+  margin-top: 5px;
+  margin-left: 20px;
+  flex: 3;
+}
+
+.chats input {
+  margin: 10px;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.list {
+  margin-top: 5px;
+  height: 100vh;
+  overflow: auto;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.message img {
+  margin: 15px;
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+}
+
+.content b {
+  margin: 3px;
+  margin-top: 10px;
+}
+
+.content p {
+  margin: 3px;
+}
+
+.unread {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.info {
+  display: flex;
+  flex-basis: 60px;
+}
+
+.info > button {
+  font-size: 0;
+  flex-basis: 0;
+}
+
+.messages {
+  overflow: auto;
+  flex: 1;
+}
+
+.inputs {
+  display: flex;
+  flex-basis: 60px;
+}
+
+.inputs input {
+  flex: 1;
+}
+
+.inputs button {
+  flex-basis: 60px;
+  font-size: 22px;
+}
+
+
+@media screen and (max-width: 1075px) {
+  .chats {
+    flex-basis: 100%;
+  }
+
+  .chat {
+    flex-basis: 100%;
+  }
+
+  .info > button {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+}
+
+input[type="file"] {
+  position: absolute;
+  top: -1500px;
+}
+
+.cursored {
+  cursor: pointer;
+}
+
+.inputs > button > img {
+  position: absolute;
+  right: 70px;
+  bottom: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.times {
+  position: absolute;
+  font-size: 15px;
+  bottom: 22px;
+  right: 77px;
+  color: white;
+}
+
+
+.title {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  top: 20%;
+  left: 5%;
+  width: 40%;
+  height: 50%;
+  animation: startup 1s;
+}
+
+.title > h1 {
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+
+.title > p {
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+
+.title > button {
+  width: 35%;
+  height: 55px;
+  margin: 40px 0;
+  background-color: #0095f6;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 25px;
+  transition: .5s;
+  animation: appearence 2s;
+}
+
+.desktop {
+  position: fixed;
+  bottom: 30vh;
+  right: 5vh;
+  height: 50vh;
+  width: 86vh;
+  animation: floating 1s;
+  border: 1px solid #0095F6;
+}
+
+.mobile {
+  position: fixed;
+  bottom: 20vh;
+  right: 8vh;
+  height: 56vh;
+  width: 28.5vh;
+  animation: floating 1s;
+  border: 1px solid #0095F6;
+}
+
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 250px;
+  opacity: .8;
+}
+
+@media screen and (max-width: 1450px) {
+  .desktop, .mobile {
+    display: none;
+  }
+
+  .title {
+    height: 100%;
+    text-align: center;
+    left: 30%;
+    margin-top: 0%;
+  }
+
+  .title > button {
+    margin: 30px calc(35% - 22px);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .particles {
+    visibility: hidden;
+  }
+
+  .title {
+    margin-top: 0%;
+    text-align: center;
+    height: 100%;
+    left: 5%;
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .title > h1 {
+    font-size: 36px;
+  }
+
+  .title > p {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 1px;
+  }
+
+  .title > button {
+    width: 50%;
+    height: 45px;
+    margin: 30px 25%;
+    color: white;
+    border-radius: 25px;
+  }
+}
+
+.title > button:hover {
+  transform: scale(1.05);
+  background-color: #20B5FF;
+}
+
+
+@keyframes appearence {
+  0% {
+    opacity: 0;
+  },
+  50% {
+    opacity: 0;
+  },
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes floating {
+  0% {
+    opacity: 0;
+    bottom: 10vh;
+  }
+}
