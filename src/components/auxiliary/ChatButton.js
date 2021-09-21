@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SHOW, NEW_CHAT } from '../../config/index'
 
 
-const ChatButton = ({ userName, text, profileImage, unread, email, setShowChat }) => {
+const ChatButton = ({ userName, text, profileImage, unread, email, setShowChat, innerWidth }) => {
   const dispatch = useDispatch()
   const currentChat = useSelector(state => state.chat)
 
@@ -14,7 +14,7 @@ const ChatButton = ({ userName, text, profileImage, unread, email, setShowChat }
         dispatch({ type: SHOW })
         dispatch({ type: NEW_CHAT, payload: { email, userName, profileImage } })
       }}
-      className= { `message${ currentChat.email === email ? ' selected' : '' }` }
+      className= { `message${ currentChat.email === email && innerWidth > 800 ? ' selected' : '' }` }
     >
       <img src={ profileImage } alt="" />
       <div className="content">
