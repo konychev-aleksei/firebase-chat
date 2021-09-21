@@ -119,6 +119,7 @@
   }
 
   .chat {
+    position: fixed;
     flex-basis: 100%;
   }
 
