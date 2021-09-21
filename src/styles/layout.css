@@ -6,7 +6,10 @@
 .main {
   display: flex;
   height: 100vh;
-  margin: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 .chats {
