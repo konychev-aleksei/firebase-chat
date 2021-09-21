@@ -26,7 +26,7 @@ const Chats = ({ innerWidth }) => {
   const inputRef = useRef(null)
 
   const handleSearch = async (e) => {
-    const query = e.target.value
+    const query = e.target.value.toLowerCase()
     if (!query.length) {
       setFound([])
       return
