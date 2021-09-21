@@ -39,6 +39,7 @@ const Chats = ({ innerWidth }) => {
   const handleSignOut = async () => {
     dispatch({ type: REMOVE_CHAT })
     dispatch({ type: HIDE })
+    window.sessionStorage.removeItem("auth")    
     await auth.signOut()
   }
 
