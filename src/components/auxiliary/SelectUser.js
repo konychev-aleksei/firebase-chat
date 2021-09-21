@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NEW_CHAT } from '../../config/index'
 
 
-const SelectUser = ({ setShowChat, setFound, inputRef, email, userName, profileImage }) => {
+const SelectUser = ({ setFound, inputRef, email, userName, profileImage }) => {
   const dispatch = useDispatch()
 
   return(
     <div
       onClick={ () => {
         dispatch({ type: NEW_CHAT, payload: { email, userName, profileImage } })
-        setShowChat(true)
+        dispatch({ type: SHOW })
         setFound([])
         inputRef.current.value = ''
       }}
