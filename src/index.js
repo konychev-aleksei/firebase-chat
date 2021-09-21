@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ReactDOM from 'react-dom'
 
 import { auth } from './firebase'
@@ -78,18 +78,19 @@ const App = () => {
 }
 
 const Messenger = () => {
+  const { user } = useContext(AppContext)
   const innerWidth = useWindowInnerWidth()
   const showChat = useSelector(state => state.show)
 
   return(
     <div className="main">
       {
-        innerWidth >= 800 || !showChat ?
+        (innerWidth >= 800 || !showChat) && user ?
         <Chats innerWidth={ innerWidth } />
         : null
       }
       {
-        innerWidth >= 800 || showChat ?
+        (innerWidth >= 800 || showChat) && user ?
         <Chat/>
         : null
       }
