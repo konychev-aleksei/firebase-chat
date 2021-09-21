@@ -37,6 +37,10 @@ const Chat = () => {
       return
     }
 
+    scrollDown()
+    setMessage('')
+    setImage(null)    
+    
     await api.sendMessage(
       name,
       url,
@@ -46,10 +50,6 @@ const Chat = () => {
       currentChat.email,
       { text: message, attachment: image }
     )
-
-    scrollDown()
-    setMessage('')
-    setImage(null)
   }
 
 
