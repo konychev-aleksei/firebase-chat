@@ -82,8 +82,9 @@ const Chats = ({ innerWidth }) => {
       <div className="list">
         {
           found.length ?
-            found.map(({ email, userName, profileImage }) =>
+            found.map(({ email, userName, profileImage }, index) =>
               <SelectUser
+                key={ index }
                 setFound={ setFound }
                 inputRef={ inputRef }
                 email={ email }
@@ -92,9 +93,10 @@ const Chats = ({ innerWidth }) => {
               />
             )
           :
-            chats.map(({ userName, text, profileImage, unread, email }) => {
+            chats.map(({ userName, text, profileImage, unread, email }, index) => {
               return(
                 <ChatButton
+                  key={ index }
                   innerWidth={ innerWidth }
                   email={ email }
                   userName={ userName }
