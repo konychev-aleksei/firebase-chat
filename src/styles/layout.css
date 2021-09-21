@@ -118,11 +118,6 @@
 
 @media screen and (max-width: 1075px) {
   .chats {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;    
     flex-basis: 100%;
   }
 
