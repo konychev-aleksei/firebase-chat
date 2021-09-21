@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { NEW_CHAT } from '../../config/index'
+import { NEW_CHAT, SHOW } from '../../config/index'
 
 
 const SelectUser = ({ setFound, inputRef, email, userName, profileImage }) => {
